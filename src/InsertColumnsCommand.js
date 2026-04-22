@@ -1,24 +1,22 @@
 import { Command } from "ckeditor5";
 
 export default class InsertColumnsCommand extends Command {
-    execute(options = {}) {
+    execute({count, columnClass, containerClass, rowClass}) {
         const editor = this.editor;
         const model = editor.model;
-        const columnsCount = options.count || 2;
-        const columnClass = options.columnClass || "";
 
         model.change(writer => {
             const figure = writer.createElement(
                 "columnsFigure",
                 {
-                    class: "columns"
+                    class: ["ck-columns-figure"]
                 }
             );
 
             const container = writer.createElement(
                 "columnsContainer",
                 {
-                    class: "columns columns-container",
+                    class: ["ck-columns-container", containerClass].join(" "),
                 }
             );
             writer.append(container, figure);
@@ -26,13 +24,27 @@ export default class InsertColumnsCommand extends Command {
             const row = writer.createElement(
                 "rowContainer",
                 {
-                    class: "row-bs"
+                    class: ["ck-columns-row", rowClass].join(" ")
                 }
             );
             writer.append(row, container);
 
-            for (let i = 0; i < columnsCount; i++) {
-                const column = writer.createElement("columnContainer", {class: columnClass});
+            const colClasses = {
+                1: "ck-col-12",
+                2: "ck-col-6",
+                3: "ck-col-4",
+                4: "ck-col-3",
+                6: "ck-col-2",
+                12: "ck-col-1"
+            };
+
+            for (let i = 0; i < count; i++) {
+                const column = writer.createElement(
+                    "columnContainer",
+                    {
+                        class: [colClasses[count], columnClass].join(" ")
+                    }
+                );
                 writer.append(column, row);
 
                 const paragraph = writer.createElement("paragraph");

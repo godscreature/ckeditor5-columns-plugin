@@ -3,7 +3,7 @@ import {toWidget, toWidgetEditable} from "ckeditor5";
 export function registerColumnsConversion(editor) {
     // Upcast
     editor.conversion.for("upcast").elementToElement({
-        view: {name: "figure", classes: "columns"},
+        view: {name: "figure", classes: "ck-columns-figure"},
         model: (viewElement, { writer }) =>
             writer.createElement("columnsFigure", {
                 class: viewElement.getAttribute("class")
@@ -11,7 +11,7 @@ export function registerColumnsConversion(editor) {
     });
 
     editor.conversion.for("upcast").elementToElement({
-        view: {name: "div", classes: ["columns-container"]},
+        view: {name: "div", classes: "ck-columns-container"},
         model: (viewElement, { writer }) =>
             writer.createElement("columnsContainer", {
                 class: viewElement.getAttribute("class")
@@ -19,7 +19,7 @@ export function registerColumnsConversion(editor) {
     });
 
     editor.conversion.for("upcast").elementToElement({
-        view: {name: "div", classes: ["row-bs"]},
+        view: {name: "div", classes: "ck-columns-row"},
         model: (viewElement, { writer }) =>
             writer.createElement("rowContainer", {
                 class: viewElement.getAttribute("class")
@@ -29,7 +29,7 @@ export function registerColumnsConversion(editor) {
     editor.conversion.for("upcast").elementToElement({
         view: {
             name: "div",
-            classes: [/col-bs-md-([64321])/]
+            classes: [/^ck-col-\d+$/]
 
         },
         model: (viewElement, { writer }) =>

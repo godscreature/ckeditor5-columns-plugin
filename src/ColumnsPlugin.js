@@ -10,9 +10,20 @@ import { registerColumnsSchema } from "./ColumnsSchema";
 import {registerColumnsConversion} from "./ColumnsConversion";
 import InsertColumnsCommand from "./InsertColumnsCommand";
 
-export default class ColumnsPlugin extends Plugin {
+export default class Columns extends Plugin {
     init() {
         const editor = this.editor;
+
+        const containerClass = editor.config.get("columns.containerClass") || "";
+        const rowClass = editor.config.get("columns.rowClass") || "";
+        const columnOptions = editor.config.get("columns.options") || [
+            { label: "1 columns", count: 1, columnClass: "" },
+            { label: "2 columns", count: 2, columnClass: "" },
+            { label: "3 columns", count: 3, columnClass: "" },
+            { label: "4 columns", count: 4, columnClass: "" },
+            { label: "6 columns", count: 6, columnClass: "" },
+            { label: "12 columns", count: 12, columnClass: "" }
+        ];
 
         registerColumnsSchema(editor);
         registerColumnsConversion(editor);
@@ -44,7 +55,12 @@ export default class ColumnsPlugin extends Plugin {
 
             dropdownView.on("execute", evt => {
                 const { count, columnClass } = evt.source.commandParam;
-                editor.execute("insertColumns", {count, columnClass});
+                editor.execute("insertColumns", {
+                    count,
+                    columnClass,
+                    containerClass,
+                    rowClass
+                });
             });
 
             return dropdownView;
