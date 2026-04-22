@@ -1,0 +1,22 @@
+{
+    "name": "ckeditor5-columns-plugin",
+    "version": "1.0.0",
+    "description": "Custom CKEditor 5 plugin for multi-column layout blocks with editable zones.",
+    "main": "src/ColumnsPlugin.js",
+    "scripts": {
+        "build": "webpack --config webpack.config.js",
+        "test": "echo \"No tests specified\" && exit 0"
+    },
+    "keywords": [
+        "ckeditor5",
+        "plugin",
+        "columns",
+        "bootstrap",
+        "editor"
+    ],
+    "author": "Den Arustamov",
+    "license": "MIT",
+    "dependencies": {
+        "ckeditor5": "^41.0.0"
+    }
+}
