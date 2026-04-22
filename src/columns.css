@@ -1,0 +1,44 @@
+.ck-columns-container .ck-col-12,
+.ck-columns-container .ck-col-6,
+.ck-columns-container .ck-col-4,
+.ck-columns-container .ck-col-3,
+.ck-columns-container .ck-col-2,
+.ck-columns-container .ck-col-1 {
+    float: left;
+    min-height: 1px;
+    padding: 5px 15px 5px 15px;
+    position: relative
+}
+
+.ck-columns-container .ck-col-12:hover,
+.ck-columns-container .ck-col-6:hover,
+.ck-columns-container .ck-col-4:hover,
+.ck-columns-container .ck-col-3:hover,
+.ck-columns-container .ck-col-2:hover,
+.ck-columns-container .ck-col-1:hover {
+    outline: 2px solid gold;
+}
+
+.ck-columns-container .ck-col-1 {
+    width: 8.33333333%
+}
+
+.ck-columns-container .ck-col-2 {
+    width: 16.66666667%
+}
+
+.ck-columns-container .ck-col-3 {
+    width: 25%
+}
+
+.ck-columns-container .ck-col-4 {
+    width: 33.33333333%
+}
+
+.ck-columns-container .ck-col-6 {
+    width: 50%
+}
+
+.ck-columns-container .ck-col-12 {
+    width: 100%
+}

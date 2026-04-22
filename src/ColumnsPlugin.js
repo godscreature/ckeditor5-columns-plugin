@@ -6,6 +6,8 @@ import {
     Plugin
 } from "ckeditor5";
 
+import './columns.css';
+
 import { registerColumnsSchema } from "./ColumnsSchema";
 import {registerColumnsConversion} from "./ColumnsConversion";
 import InsertColumnsCommand from "./InsertColumnsCommand";
