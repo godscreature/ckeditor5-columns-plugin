@@ -4,7 +4,6 @@ import { addListToDropdown, createDropdown } from "@ckeditor/ckeditor5-ui";
 
 import "./columns.css";
 
-import columnsIcon from './columns-icon.svg';
 import { registerColumnsSchema } from "./ColumnsSchema";
 import {registerColumnsConversion} from "./ColumnsConversion";
 import InsertColumnsCommand from "./InsertColumnsCommand";
@@ -34,7 +33,7 @@ export default class Columns extends Plugin {
 
             dropdownView.buttonView.set({
                 label: "Insert Columns",
-                icon: columnsIcon,
+                icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="currentColor" d="M1.5 4.121C1.5 2.95 2.426 2 3.568 2h12.864c1.142 0 2.068.95 2.068 2.121V16.38c0 1.171-.926 2.121-2.068 2.121H3.568c-1.142 0-2.068-.95-2.068-2.121zm2.068-.707a.7.7 0 0 0-.69.707V6.38h14.244V4.12a.7.7 0 0 0-.69-.707zm13.554 4.38h-4.968v3.939h4.968zm0 5.353h-4.968v3.939h4.278c.381 0 .69-.317.69-.707zm-6.347 3.939V7.794H2.878v8.585c0 .39.309.707.69.707z"/></svg>',
                 tooltip: true
             });
 
