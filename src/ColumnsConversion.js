@@ -1,4 +1,4 @@
-import {toWidget, toWidgetEditable} from "ckeditor5";
+import { toWidget, toWidgetEditable } from "@ckeditor/ckeditor5-widget/src/utils";
 
 export function registerColumnsConversion(editor) {
     // Upcast

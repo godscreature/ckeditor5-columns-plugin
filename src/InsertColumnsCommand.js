@@ -1,4 +1,4 @@
-import { Command } from "ckeditor5";
+import Command from "@ckeditor/ckeditor5-core/src/command";
 
 export default class InsertColumnsCommand extends Command {
     execute({count, columnClass, containerClass, rowClass}) {
