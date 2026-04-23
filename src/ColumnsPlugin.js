@@ -1,13 +1,10 @@
-import {
-    addListToDropdown,
-    Collection,
-    createDropdown,
-    IconTableLayout,
-    Plugin
-} from "ckeditor5";
+import { addListToDropdown, createDropdown } from '@ckeditor/ckeditor5-ui';
+import Collection from '@ckeditor/ckeditor5-utils/src/collection';
+import Plugin from '@ckeditor/ckeditor5-core/src/plugin';
 
 import './columns.css';
 
+import columnsIcon from './columns-icon.svg';
 import { registerColumnsSchema } from "./ColumnsSchema";
 import {registerColumnsConversion} from "./ColumnsConversion";
 import InsertColumnsCommand from "./InsertColumnsCommand";
@@ -37,7 +34,7 @@ export default class Columns extends Plugin {
 
             dropdownView.buttonView.set({
                 label: "Insert Columns",
-                icon: IconTableLayout,
+                icon: columnsIcon,
                 tooltip: true
             });
 
