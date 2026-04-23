@@ -1,6 +1,6 @@
+import Plugin from "@ckeditor/ckeditor5-core";
+import Collection from "@ckeditor/ckeditor5-utils";
 import { addListToDropdown, createDropdown } from "@ckeditor/ckeditor5-ui";
-import Collection from "@ckeditor/ckeditor5-utils/src/collection";
-import Plugin from "@ckeditor/ckeditor5-core/src/plugin";
 
 import "./columns.css";
 
